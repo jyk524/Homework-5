@@ -76,15 +76,6 @@ var yyyy = todays.getFullYear();
 
 // TO GET CURRENT TIME - DONE
 
-// gets the current of the user when are on the website
-function myHour() {
-  var d = new Date();
-  var n = d.getHours();
-  return parseInt(n);
-}
-
-console.log(myHour());
-
 //TODO: generate the div - create 9 sub divs
 
 //in each sub div display time on the left, input area in the middle, submit button the the right
@@ -140,6 +131,17 @@ console.log(time);
 //     //     if (myHour < 09 || myHour > 17){
 //     // //turn  all the divs to yellow
 // }};
+
+// gets the current of the user when are on the website
+
+function myHour() {
+  var d = new Date();
+  var n = d.getHours();
+  return parseInt(n);
+}
+
+console.log(myHour());
+
 //selects all of the time blocks
 $(".time-block").each(function (element) {
   console.log(this);
@@ -147,7 +149,7 @@ $(".time-block").each(function (element) {
   var timeRow = $(this);
   //put in the user time
   var now = myHour();
-  //splits the number from the hour which allows it to be parsed so we can compare it to the hour
+  //splits the number from the hour which allows it to be parsed so we can compare it to the hour [1] is used because the first id is current day
   var time = parseInt(timeRow.attr("id").split("-")[1]);
   console.log(time);
   if (now === time) {
@@ -164,7 +166,6 @@ $(".time-block").each(function (element) {
   }
 });
 
-var userInputByHour = [];
 //save button with Javascript
 // var saveButton = document.querySelectorAll(".saveBtn");
 // var descriptionText = document.querySelector(".description");
@@ -181,7 +182,7 @@ var userInputByHour = [];
 
 // jQuery Save button savebutton is targeted, when save button is clicked
 $(".saveBtn").on("click", function () {
-  //get nearby values.
+  //get nearby values
   console.log(this);
   // this targets the text box, sibling will target the description in the textbox and pull it with value
   var text = $(this).siblings(".description").val();
@@ -201,8 +202,6 @@ $("#hour-14 .description").val(localStorage.getItem("hour-14"));
 $("#hour-15 .description").val(localStorage.getItem("hour-15"));
 $("#hour-16 .description").val(localStorage.getItem("hour-16"));
 $("#hour-17 .description").val(localStorage.getItem("hour-17"));
-
-console.log(mrHour());
 
 // function init() {
 //   // Write code here to check if there are todos in localStorage
