@@ -44,9 +44,6 @@
 
 // * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
-// - - -
-// © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
-
 // as soon as i open my page get document on ready
 
 // Create time blocks with sub divs
@@ -64,15 +61,18 @@ $(document).ready(function () {
   console.log("ready!");
 });
 
-// TO GET THE CURRENT DATE - find a way to display the day of the week
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, "0");
-var mm = String(today.getMonth() + 1).padStart(2, "0");
-//January is 0!
-var yyyy = today.getFullYear();
-today = mm + "/" + dd + "/" + yyyy;
-// document.write(today);
+const date = moment();
+today = moment().format("LLLL");
 currentDay.textContent = today;
+
+// TO GET THE CURRENT DATE - find a way to display the day of the week
+var todays = new Date();
+var dd = String(todays.getDate()).padStart(2, "0");
+var mm = String(todays.getMonth() + 1).padStart(2, "0");
+//January is 0!
+var yyyy = todays.getFullYear();
+//today = mm + "/" + dd + "/" + yyyy;
+// document.write(today);
 
 // TO GET CURRENT TIME - DONE
 
